@@ -5,11 +5,10 @@ import { Produit } from '../models/produit';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-boutique',
-  standalone: true,
-  imports: [FiltreComponent,ListeComponent],
-  templateUrl: './boutique.component.html',
-  styleUrl: './boutique.component.css'
+    selector: 'app-boutique',
+    imports: [FiltreComponent, ListeComponent],
+    templateUrl: './boutique.component.html',
+    styleUrl: './boutique.component.css'
 })
 export class BoutiqueComponent implements OnInit {
   produits : Produit[] = [];

@@ -2,11 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-filtre',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './filtre.component.html',
-  styleUrl: './filtre.component.css'
+    selector: 'app-filtre',
+    imports: [FormsModule],
+    templateUrl: './filtre.component.html',
+    styleUrl: './filtre.component.css'
 })
 export class FiltreComponent {
 
