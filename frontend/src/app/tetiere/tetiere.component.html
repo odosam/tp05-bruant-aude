@@ -4,6 +4,8 @@
         <a routerLink="/panier" routerLinkActive="active-link">Panier</a>
     </nav>
     <a routerLink="/panier">
-        <span [ngClass]="{'visible': (getItemCount(itemCount$ | async) > 0)}" class="cart-size">{{ getItemCount(itemCount$ | async) }}</span>
+        <span class="cart-count">
+            Nombre d'articles : {{ itemCount$ | async }}
+        </span>
     </a>
 </header>

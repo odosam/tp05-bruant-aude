@@ -1,8 +1,8 @@
 [
-    {"ref" : "p1", "nom":"Porsche GT3 RS","prix":2},
-    {"ref" : "p2", "nom":"Honda Civic EG5","prix": 1000 },
+    {"ref" : "p1", "nom":"Porsche GT3 RS","prix":200000},
+    {"ref" : "p2", "nom":"Honda Civic EG5","prix": 5000 },
     {"ref" : "p3", "nom":"1000tipla","prix":4000000},
-    {"ref" : "p4", "nom":"Verre d'eau","prix":1000000},
+    {"ref" : "p4", "nom":"Verre d'eau","prix":10},
     {"ref" : "p5", "nom":"Antoine","prix":900000000000000}
 
   ]

@@ -1,0 +1,56 @@
+/* Style global pour le conteneur des produits */
+div {
+    display: flex;               /* Utilisation de flexbox pour l'alignement horizontal */
+    justify-content: space-between; /* Espacement entre le nom, le prix et le bouton */
+    align-items: center;         /* Alignement centré verticalement */
+    margin-bottom: 20px;         /* Espacement entre chaque produit */
+    padding: 15px;               /* Espacement interne autour des éléments */
+    border: 1px solid #444;     /* Bordure sombre autour de chaque produit */
+    border-radius: 8px;          /* Coins arrondis */
+    background-color: #333;      /* Fond foncé pour chaque produit */
+    color: #fff;                 /* Texte en blanc pour plus de lisibilité sur fond sombre */
+}
+
+/* Style pour le nom du produit */
+div > span.product-name {
+    font-size: 18px;             /* Taille de police du nom */
+    font-weight: bold;           /* Mettre le nom en gras */
+    color: #fff;                 /* Texte en blanc */
+}
+
+/* Style pour le prix du produit */
+div > span.product-price {
+    font-size: 16px;             /* Taille de police du prix */
+    color: #f4a261;              /* Couleur orange pour le prix */
+}
+
+/* Style pour le bouton "Ajouter au panier" */
+button.product-add-to-cart {
+    padding: 10px 15px;          /* Espacement interne du bouton */
+    font-weight: bold;
+    font-size: 16px;            /* Taille du texte du bouton */
+    background-color: #c89b53;   /* Couleur de fond bleu pour le bouton */
+    color: white;                /* Texte du bouton en blanc */
+    border: none;                /* Supprimer la bordure du bouton */
+    border-radius: 5px;          /* Coins arrondis */
+    cursor: pointer;             /* Curseur en forme de main pour indiquer que c'est cliquable */
+    transition: background-color 0.3s ease; /* Transition pour la couleur au survol */
+}
+
+/* Changer la couleur du bouton au survol */
+button.product-add-to-cart:hover {
+    background-color: #5b3310 ;   /* Couleur plus foncée lors du survol */
+}
+
+/* Style pour la mise en page responsive */
+@media (max-width: 600px) {
+    div {
+        flex-direction: column; /* Disposer les éléments en colonne sur petits écrans */
+        align-items: flex-start; /* Aligner les éléments à gauche */
+    }
+
+    button.product-add-to-cart {
+        margin-top: 10px;       /* Ajouter un peu d'espace au-dessus du bouton */
+        width: 100%;            /* Le bouton prend toute la largeur disponible */
+    }
+}

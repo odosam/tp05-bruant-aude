@@ -1,0 +1,85 @@
+
+header {
+    background-color: #333;      
+    padding: 10px 20px;          
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+
+nav {
+    display: flex;
+    gap: 20px;                    
+}
+
+nav a {
+    text-decoration: none;       
+    color: white;                
+    font-size: 18px;             
+    transition: color 0.3s ease; 
+}
+
+nav a:hover, nav a.active-link {
+    color: #f4a261;              
+}
+
+
+a.routerLink {
+    position: relative;
+}
+
+.cart-size {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;        
+    color: white;                 
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    visibility: hidden;           
+}
+
+/* Quand il y a des articles dans le panier, l'indicateur devient visible */
+.cart-size.visible {
+    visibility: visible;
+}
+
+a.routerLink:hover .cart-size {
+    background-color: #f4a261;    
+}
+
+/* Container pour l'élément cart-count */
+a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Applique un fond coloré à l'élément cart-count */
+  .cart-count {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #f39c12;  /* Fond jaune or */
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+  }
+ 
+  
+  /* Changer la couleur du cart-count au survol */
+  a:hover .cart-count {
+    background-color: #e67e22; /* Changement de fond au survol */
+  }
+  

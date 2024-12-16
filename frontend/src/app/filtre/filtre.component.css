@@ -1,0 +1,54 @@
+/* Container qui contient les filtres, on utilise flex pour les aligner côte à côte */
+label {
+    display: inline-block;
+    width: 45%; /* Largeur pour que les filtres se tiennent l'un à côté de l'autre */
+    margin: 10px 2%; /* Marges entre les filtres */
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #f0f0f0; /* Texte clair pour un mode sombre */
+}
+
+/* Stylisation du texte de label */
+label span {
+    display: block;
+    margin-bottom: 5px;
+    color: #f0f0f0; /* Texte clair */
+    font-weight: bold;
+}
+
+/* Stylisation des champs input */
+input {
+    width: 100%; /* Occupe toute la largeur du label */
+    padding: 8px; /* Réduction de la taille des champs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #333; /* Fond sombre pour dark mode */
+    color: #f0f0f0; /* Texte clair */
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+/* Ajouter un effet au survol et au focus des inputs */
+input:focus {
+    outline: none;
+    border-color: #f39c12; /* Orange doux */
+    background-color: #444; /* Légèrement plus clair que le fond sombre */
+}
+
+/* Ajouter un effet hover sur les champs de saisie */
+input:hover {
+    border-color: #f39c12; /* Orange doux lors du survol */
+}
+
+/* Responsivité : sur un écran plus petit, les filtres s'empilent */
+@media (max-width: 768px) {
+    label {
+        width: 100%;
+    }
+}
+
+/* Mode sombre pour le fond général */
+body {
+    background-color: #222; /* Fond plus foncé */
+    color: #f0f0f0; /* Texte clair */
+}

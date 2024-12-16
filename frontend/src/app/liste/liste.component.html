@@ -1,5 +1,4 @@
 <div *ngFor="let item of produits">
-    {{item.nom}}
-    {{item.prix}}
-
+    {{item.nom}} : {{item.prix}} €
+    <button class="product-add-to-cart" (click)="AjoutPanier(item)">Ajouter au panier</button>
 </div>

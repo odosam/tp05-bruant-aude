@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { from, Observable, of } from 'rxjs';
-import { Produit } from '../models/produit';
+import { Observable } from 'rxjs';
 import { PanierState } from './panier.state';
-import {AjoutPanier, SupprPanier} from './panier.actions';
+import { Produit } from '../models/produit';
+import { AjoutPanier, SupprPanier } from './panier.actions';
 import { CommonModule } from '@angular/common';
-import { map } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-panier',
@@ -15,28 +13,31 @@ import { map } from 'rxjs/operators';
   templateUrl: './panier.component.html',
   styleUrl: './panier.component.css'
 })
-
 export class PanierComponent {
 
-  panierItems$: Observable<Produit[]>;
+  panierItems$: Observable<Produit[]>;  // Liste des articles
+  itemCount$: Observable<number>;  // Nombre d'articles dans le panier
 
-    constructor(private store: Store) {
+  constructor(private store: Store) {
+    // Récupère les articles du panier
     this.panierItems$ = this.store.select(PanierState.getItems);
-  }
-  
-    AjoutPanier(produit: Produit) {
-        this.store.dispatch(new AjoutPanier(produit));
-    }
-  
-    SupprPanier(produit: Produit) {
-        this.store.dispatch(new SupprPanier(produit));
-    }
-
-    getTotal(panierItems: Produit[] | null | undefined): number {
-      if (!panierItems) {
-          return 0;
-      }
-      return panierItems.reduce((total, item) => total + item.prix, 0);
+    
+    // Récupère le nombre d'articles dans le panier
+    this.itemCount$ = this.store.select(PanierState.getCount);
   }
 
+  AjoutPanier(produit: Produit) {
+    this.store.dispatch(new AjoutPanier(produit));
+  }
+
+  SupprPanier(produit: Produit) {
+    this.store.dispatch(new SupprPanier(produit));
+  }
+
+  getTotal(panierItems: Produit[] | null | undefined): number {
+    if (!panierItems) {
+      return 0;
+    }
+    return panierItems.reduce((total, item) => total + item.prix, 0);
+  }
 }
