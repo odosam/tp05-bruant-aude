@@ -11,18 +11,18 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './panier.component.html',
-  styleUrl: './panier.component.css'
+  styleUrls: ['./panier.component.css']
 })
 export class PanierComponent {
 
-  panierItems$: Observable<Produit[]>;  // Liste des articles
-  itemCount$: Observable<number>;  // Nombre d'articles dans le panier
+  panierItems$: Observable<{ produit: Produit, quantity: number }[]>;  
+  itemCount$: Observable<number>;  
 
   constructor(private store: Store) {
-    // Récupère les articles du panier
+    
     this.panierItems$ = this.store.select(PanierState.getItems);
     
-    // Récupère le nombre d'articles dans le panier
+    
     this.itemCount$ = this.store.select(PanierState.getCount);
   }
 
@@ -34,10 +34,11 @@ export class PanierComponent {
     this.store.dispatch(new SupprPanier(produit));
   }
 
-  getTotal(panierItems: Produit[] | null | undefined): number {
+  
+  getTotal(panierItems: { produit: Produit, quantity: number }[] | null | undefined): number {
     if (!panierItems) {
       return 0;
     }
-    return panierItems.reduce((total, item) => total + item.prix, 0);
+    return panierItems.reduce((total, item) => total + (item.produit.prix * item.quantity), 0);
   }
 }
